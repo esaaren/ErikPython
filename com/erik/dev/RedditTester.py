@@ -6,13 +6,16 @@ import re
 import os
 
 class RedditComment(dict):
-    def __init__(self, fname):
-        dict.__init__(self, fname=fname)
+    def __init__(self, comment_string):
+        dict.__init__(self, fname=comment_string)
 
 
 def run():
     from boto import kinesis
     kinesis = kinesis.connect_to_region("ca-central-1")
+    # stream = kinesis.create_stream("StreamNameHere", 1)
+
+
     start = time.time()
 
     reddit = praw.Reddit(client_id='gluFwvMrQLqLuA',
@@ -21,6 +24,8 @@ def run():
                          password='plasmafury10',
                          username='plasmatrendybot')
 
+
+    # Subreddit name
     subreddit = reddit.subreddit('toronto')
 
     comments = subreddit.stream.comments()
