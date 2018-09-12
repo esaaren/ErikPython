@@ -6,9 +6,17 @@ import json
 from pyspark import SparkContext
 from pyspark.streaming import StreamingContext
 from pyspark.streaming.kinesis import KinesisUtils, InitialPositionInStream
-from pyspark.sql.functions import from_json
-import re
-from pyspark.mllib.feature import Word2Vec
+from pyspark.sql import SQLContext
+
+def saveData(rdd):
+    print('In save a parquet')
+    sqlContext = SQLContext(sc)
+    if not rdd.isEmpty():
+        df = rdd.map(lambda x: (x,)).toDF()
+        print('Writing file')
+        df.write.parquet('s3a://erik-spark-poc/ouputs', mode='append')
+    print('Return save as parquet')
+    return rdd
 
 
 if __name__ == "__main__":
@@ -24,7 +32,11 @@ if __name__ == "__main__":
         ssc, appName, streamName, endpointUrl, regionName, InitialPositionInStream.LATEST, 2)
 
     parsed = lines.map(lambda x: json.loads(x)['fname'])
-    parsed.pprint()
+
+    parsed.map(lambda x: 'Rec in this line: %s\n' % x).pprint()
+
+    parsed.foreachRDD(lambda x: saveData(x))
 
     ssc.start()
     ssc.awaitTermination()
+

@@ -13,8 +13,7 @@ class RedditComment(dict):
 def run():
     from boto import kinesis
     kinesis = kinesis.connect_to_region("ca-central-1")
-    #stream = kinesis.create_stream("ErikStreamingPOC", 1)
-
+    #stream = kinesis.create_stream("ErikSparkPOC", 1)
 
     start = time.time()
 
@@ -26,7 +25,7 @@ def run():
 
 
     # Subreddit name
-    subreddit = reddit.subreddit('toronto')
+    subreddit = reddit.subreddit('askreddit')
 
     comments = subreddit.stream.comments()
 
@@ -39,7 +38,7 @@ def run():
             reddit_comment = RedditComment(comment.body.encode('ascii', 'ignore'))
 
             try:
-                kinesis.put_record("ErikStreamingPOC", json.dumps(reddit_comment), "partitionkey")
+                kinesis.put_record("ErikSparkPOC", json.dumps(reddit_comment), "partitionkey")
             except:
                 print("Failed to insert to Kinesis")
 

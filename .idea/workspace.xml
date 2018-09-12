@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c1c5a0e-6d5e-4922-840b-c94465707647" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/com/erik/dev/SparkStreamingPOC.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/com/erik/dev/SparkWordCountExample.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/com/erik/dev/VectorizeData.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/com/erik/dev/test_json.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/com/erik/dev/RedditTester.py" beforeDir="false" afterPath="$PROJECT_DIR$/com/erik/dev/RedditTester.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/erik/dev/SparkStreamingPOC.py" beforeDir="false" afterPath="$PROJECT_DIR$/com/erik/dev/SparkStreamingPOC.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="RedditTester.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RedditTester.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/com/erik/dev/RedditTester.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="28" column="41" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
+            <state relative-caret-position="-191">
+              <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -33,11 +29,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SparkStreamingPOC.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SparkStreamingPOC.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/com/erik/dev/SparkStreamingPOC.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="29" selection-end-column="26" />
+            <state relative-caret-position="115">
+              <caret line="16" column="53" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -110,8 +106,8 @@
         <option value="$PROJECT_DIR$/com/erik/dev/ErikKerasNeural.py" />
         <option value="$PROJECT_DIR$/com/erik/dev/insert_kinesis.py" />
         <option value="$PROJECT_DIR$/com/erik/dev/VectorizeData.py" />
-        <option value="$PROJECT_DIR$/com/erik/dev/RedditTester.py" />
         <option value="$PROJECT_DIR$/com/erik/dev/test_json.py" />
+        <option value="$PROJECT_DIR$/com/erik/dev/RedditTester.py" />
         <option value="$PROJECT_DIR$/com/erik/dev/SparkStreamingPOC.py" />
       </list>
     </option>
@@ -437,7 +433,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1293" height="703" extended-state="7" />
+    <frame x="-6" y="-6" width="1293" height="703" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22513922" />
@@ -445,7 +441,7 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.3293617" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.24823944" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.39788732" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.17429577" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32922536" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -784,22 +780,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/erik/dev/SparkStreamingPOC.py">
+    <entry file="file://$PROJECT_DIR$/com/erik/dev/RedditTester.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="29" selection-end-column="26" />
+        <state relative-caret-position="-191">
+          <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
           <folding>
-            <element signature="e#0#37#0" expanded="true" />
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/erik/dev/RedditTester.py">
+    <entry file="file://$PROJECT_DIR$/com/erik/dev/SparkStreamingPOC.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="28" column="41" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
+        <state relative-caret-position="115">
+          <caret line="16" column="53" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
