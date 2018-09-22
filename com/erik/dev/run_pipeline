@@ -1,0 +1,21 @@
+#!/bin/bash
+
+gsutil cp gs://erik-dataflow/V_CUSTOMER* ../tmp
+
+cd ../tmp
+
+for filename in V_CUSTOMER*.csv; do
+        echo $filename
+        filenameNoExt=$(echo "$filename" | cut -f 1 -d '.')
+        filenameSplit=(${filenameNoExt//_/ })
+        datepart=${filenameSplit[2]}
+        echo $datepart
+        sed -i ' 1 s/.*/&;DATE_PART/' $filename
+        sed -i '2,$ s/$/;'$datepart'/' $filename
+done
+
+gsutil cp V_CUSTOMER* gs://erik-dataflow/ready
+
+cd ../bin
+
+python cogeco_dataflow_poc.py
