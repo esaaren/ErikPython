@@ -9,12 +9,12 @@ from pyspark.sql import SQLContext, HiveContext
 import re
 
 def removeStringSpecialCharacters(s):
-    # replace special characters with " "
-    stripped = re.sub("[^\w\s\-\_]"," ", s)
-    #change any whitespace to one space
-    stripped= re.sub("\s+", " ", stripped)
-    #remove start and end whitespace
-    stripped= stripped.strip()
+    # Replace special characters with " "
+    stripped = re.sub("[^\w\s\-\_]","", s)
+    # Change any whitespace to one space
+    stripped = re.sub("\s+", " ", stripped)
+    # Remove start and end whitespace
+    stripped = stripped.strip()
     return stripped
 
 def removeStopWords(s, stopwords):
@@ -41,8 +41,8 @@ def saveDataHive(rdd):
         # Simple example to apply a few string operations on each element being streamed in
         stopwords = ['is', 'and', 'or', 'of', 'a', 'i']
         rdd = rdd.map(lambda x: x.lower())
-        rdd = rdd.map(lambda x: removeStopWords(x,stopwords))
         rdd = rdd.map(lambda x: removeStringSpecialCharacters(x))
+        rdd = rdd.map(lambda x: removeStopWords(x, stopwords))
         # Only need the column in our data frame, next iteration add an index or something
         columns = ['raw_data']
         # Temporary dataframe which has no column names

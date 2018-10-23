@@ -5,7 +5,8 @@ import re
 import apache_beam as beam
 from apache_beam.options.pipeline_options import PipelineOptions
 
-""" How to run via cloud shell
+""" 
+    How to run via cloud shell
 
     The V_CUSTOMER_<date> files are in a bucket gs://erik-dataflow/
     Make sure you also have  gs://erik-dataflow/ready 
@@ -26,8 +27,6 @@ from apache_beam.options.pipeline_options import PipelineOptions
     
     Now run:
     Nohup ./run_pipeline.sh &
-
-
 """
 
 
@@ -42,7 +41,6 @@ class DataIngestion:
                        values))
 
         return row
-
 
 def run(argv=None):
     parser = argparse.ArgumentParser()
