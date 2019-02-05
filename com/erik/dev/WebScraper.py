@@ -66,6 +66,15 @@ def run():
                     try:
                         response = requests.get(product_url)
                         parsed_page = BeautifulSoup(response.content)
+                        for product_desc in parsed_page.body.findAll("p", {"class": "pdp-description-text"}):
+                            try:
+                                desc_file = open('{}/{}'.format(folder_create_path, product_code+'_desc.txt'), 'w')
+                                desc_file.write(str(product_desc.text.encode('utf-8')))
+                                desc_file.close()
+                            except Exception as e:
+                                logger.error('Failed to write description for prod: ' + product_code)
+                                logger.error(e)
+
                         for image in parsed_page.body.findAll('img'):
                             if 'hm.com' in image.get('src'):
                                 image_source = 'https:' + image.get('src')
