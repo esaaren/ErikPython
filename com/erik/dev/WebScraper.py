@@ -23,15 +23,24 @@ def removeStringSpecialCharacters(s):
 
 def run():
 
+    collect_all_at_once = False
 
     url_dict = {}
 
-    url_dict['blouse'] = 'https://www2.hm.com/en_ca/women/shop-by-product/shirts-and-blouses.html?product-type=ladies_shirtsblouses&sort=stock&image-size=small&image=model&offset=0&page-size=1024'
-    url_dict['top'] = 'https://www2.hm.com/en_ca/women/shop-by-product/tops.html?product-type=ladies_tops&sort=stock&image-size=small&image=model&offset=0&page-size=496'
-    url_dict['dress'] = 'https://www2.hm.com/en_ca/women/shop-by-product/dresses.html?product-type=ladies_dresses&sort=stock&image-size=small&image=model&offset=0&page-size=1024'
-    url_dict['cardigan'] = 'https://www2.hm.com/en_ca/women/shop-by-product/cardigans-and-jumpers.html?product-type=ladies_cardigansjumpers&sort=stock&image-size=small&image=model&offset=0&page-size=1024'
+    if collect_all_at_once == True:
+        url_dict['all'] = 'https://www2.hm.com/en_ca/women/shop-by-product/view-all.html?sort=stock&image-size=small&image=model&offset=0&page-size=8000'
+
+    else:
+        url_dict['blouse'] = 'https://www2.hm.com/en_ca/women/shop-by-product/shirts-and-blouses.html?product-type=ladies_shirtsblouses&sort=stock&image-size=small&image=model&offset=0&page-size=1024'
+        url_dict['top'] = 'https://www2.hm.com/en_ca/women/shop-by-product/tops.html?product-type=ladies_tops&sort=stock&image-size=small&image=model&offset=0&page-size=496'
+        url_dict['dress'] = 'https://www2.hm.com/en_ca/women/shop-by-product/dresses.html?product-type=ladies_dresses&sort=stock&image-size=small&image=model&offset=0&page-size=1024'
+        url_dict['cardigan'] = 'https://www2.hm.com/en_ca/women/shop-by-product/cardigans-and-jumpers.html?product-type=ladies_cardigansjumpers&sort=stock&image-size=small&image=model&offset=0&page-size=1024'
+        url_dict['jacket'] = 'https://www2.hm.com/en_ca/women/shop-by-product/jackets-and-coats.html?product-type=ladies_jacketscoats&sort=stock&image-size=small&image=model&offset=0&page-size=256'
+
     home_path = '/Users/erik.saarenvirta/Documents/Work/Projects/crawler/data/'
+
     products_saved = []
+
     try:
         with open('products_saved.pickle', 'rb') as handle:
             products_saved = pickle.load(handle)
